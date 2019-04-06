@@ -9,7 +9,7 @@ set expandtab
 set number  " show line numbers
 set cursorline  " highlight the current line
 
-set showmode
+set showmode    " see what mode you're in
 set showcmd " see what commands you are typing
 
 
