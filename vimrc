@@ -1,4 +1,7 @@
+" This vimrc was created on 31st March, 2019 by Monil Soni
+
 set encoding=utf-8
+set nocompatible
 
 syntax enable   " enable syntax processing
 color dracula
@@ -12,18 +15,27 @@ set number  " show line numbers
 set cursorline  " highlight the current line
 
 set showmode    " see what mode you're in
-set showcmd " see what commands you are typing
+set showcmd    " see what commands you are typing
 
+filetype plugin indent on  " load filetype-specific indent files and plugin files
 
 set smartindent
-filetype indent on  " load filetype-specific indent files
+
+
+" Search down into subfolders
+" Provides tab-completion for all file-related tasks
+set path+=**
+
+" Display all matching files when we tab complete
 set wildmenu 
 set wildmode=list:longest 
+
 set showmatch   " highlight paranthesis matching
 set undofile    " undo previous actions even after you close and open a file    
 
 set incsearch   " search as characters are entered
 set hlsearch    " highlight matches
+set smartcase   " searches in a case insensitive manner until a different case is encountered. Then it searches case matching
 
 " move vertically by visual line These two allow us to move around lines visually. So if there's a very long line that gets visually wrapped to two lines, j won't skip over the "fake" part of the visual line in favor of the next "real" line.
 nnoremap j gj
@@ -56,4 +68,3 @@ if has("autocmd")
     \ endif
   au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
 endif
-
