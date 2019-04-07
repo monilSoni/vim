@@ -68,3 +68,6 @@ if has("autocmd")
     \ endif
   au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
 endif
+
+autocmd BufNewFile *.c r ~/Templates/c_snippet.c
+autocmd BufNewFile *.cpp r ~/Templates/cpp_snippet.cpp
