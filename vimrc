@@ -11,7 +11,7 @@ set softtabstop=4   " number of spaces in TAB while editing
 set shiftwidth=4
 set expandtab
 
-set number  " show line numbers
+set number relativenumber " show line numbers
 set cursorline  " highlight the current line
 
 set showmode    " see what mode you're in
@@ -52,10 +52,16 @@ set splitright
 set laststatus=2 " Show the name of the file always
 
 " Disable arrow keys in every mode except insert
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
+noremap <Left>  :echoe "Use h"<CR>
+noremap <Right> :echoe "Use l"<CR>
+noremap <Up>    :echoe "Use k"<CR>
+noremap <Down>  :echoe "Use j"<CR>
+
+" Making navigation simpler
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
 
 " Cursor remapping from block to ibeam in insert mode
 if has("autocmd")
@@ -71,3 +77,4 @@ endif
 
 autocmd BufNewFile *.c r ~/Templates/c_snippet.c
 autocmd BufNewFile *.cpp r ~/Templates/cpp_snippet.cpp
+
