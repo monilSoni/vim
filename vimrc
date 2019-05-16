@@ -1,5 +1,15 @@
 " This vimrc was created on 31st March, 2019 by Monil Soni
 
+" vim-plug stuff
+" Plugins will be downloaded under the specified directory.
+call plug#begin('~/.vim/plugged')
+
+" Declare the list of plugins.
+Plug 'scrooloose/nerdtree'
+
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
+
 set encoding=utf-8
 set nocompatible
 
