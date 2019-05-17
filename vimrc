@@ -5,10 +5,13 @@
 call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.
+Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdtree'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
+
+let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/.ycm_extra_conf.py'
 
 set encoding=utf-8
 set nocompatible
@@ -30,7 +33,6 @@ set showcmd    " see what commands you are typing
 filetype plugin indent on  " load filetype-specific indent files and plugin files
 
 set smartindent
-
 
 " Search down into subfolders
 " Provides tab-completion for all file-related tasks
