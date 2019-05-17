@@ -1,5 +1,10 @@
 " This vimrc was created on 31st March, 2019 by Monil Soni
 
+" This option forces Vim to source .vimrc file if it present in working directory, thus providing a place to store project-specific configuration.
+set exrc
+" Since Vim will source .vimrc from any directory you run Vim from, this is a potential security hole; so, you should consider setting secure option. This option will restrict usage of some commands in non-default .vimrc files; commands that write to file or execute shell commands are not allowed and map commands are displayed.
+set secure
+
 " vim-plug stuff
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.vim/plugged')
