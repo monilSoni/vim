@@ -17,7 +17,8 @@ call plug#begin('~/.vim/plugged')
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
-let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/.ycm_extra_conf.py'
+" Uncomment the following line if you use YouCompleteMe
+" let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/.ycm_extra_conf.py'
 
 set encoding=utf-8
 set nocompatible
@@ -55,7 +56,7 @@ set incsearch   " search as characters are entered
 set hlsearch    " highlight matches
 set smartcase   " searches in a case insensitive manner until a different case is encountered. Then it searches case matching
 
-" move vertically by visual line These two allow us to move around lines visually. So if there's a very long line that gets visually wrapped to two lines, j won't skip over the "fake" part of the visual line in favor of the next "real" line.
+" move vertically by visual line These two allow us to move around lines visually. So if there's a very long line that gets visually wrapped to two lines, j won't skip over the 'fake' part of the visual line in favor of the next 'real' line.
 nnoremap j gj
 nnoremap k gk
 
@@ -95,4 +96,3 @@ endif
 
 autocmd BufNewFile *.c r ~/Templates/c_snippet.c
 autocmd BufNewFile *.cpp r ~/Templates/cpp_snippet.cpp
-
