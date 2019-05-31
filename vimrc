@@ -1,4 +1,7 @@
 " This vimrc was created on 31st March, 2019 by Monil Soni
+" 
+" Paste the following line in ~/.vimrc and uncomment it
+" runtime vimrc " Load the first file named 'vimrc' found in runtimepath
 
 " This option forces Vim to source .vimrc file if it present in working directory, thus providing a place to store project-specific configuration.
 set exrc
