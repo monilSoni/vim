@@ -10,8 +10,6 @@ set secure
 call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.
-Plug 'Valloric/YouCompleteMe'
-Plug 'scrooloose/nerdtree'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
