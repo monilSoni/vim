@@ -13,6 +13,7 @@ set secure
 call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.
+Plug 'morhetz/gruvbox'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -24,7 +25,9 @@ set encoding=utf-8
 set nocompatible
 
 syntax enable   " enable syntax processing
-color dracula
+" color dracula
+colorscheme gruvbox
+set background=dark
 
 set tabstop=4   " number of visual spaces per TAB
 set softtabstop=4   " number of spaces in TAB while editing
@@ -40,6 +43,7 @@ set showcmd    " see what commands you are typing
 filetype plugin indent on  " load filetype-specific indent files and plugin files
 
 set smartindent
+set colorcolumn=120
 
 " Search down into subfolders
 " Provides tab-completion for all file-related tasks
