@@ -14,6 +14,7 @@ call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.
 Plug 'morhetz/gruvbox'
+Plug 'mtdl9/vim-log-highlighting'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -98,5 +99,4 @@ if has("autocmd")
   au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
 endif
 
-autocmd BufNewFile *.c r ~/Templates/c_snippet.c
-autocmd BufNewFile *.cpp r ~/Templates/cpp_snippet.cpp
+autocmd BufNewFile *.cpp r ~/Competitive-Coding/templates/cpp_template.cpp
