@@ -55,6 +55,7 @@ set wildmenu
 set wildmode=list:longest 
 
 set showmatch   " highlight paranthesis matching
+set undodir=~/.vim/undodir  " all the undo files are to be placed in this directory
 set undofile    " undo previous actions even after you close and open a file    
 
 set incsearch   " search as characters are entered
