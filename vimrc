@@ -15,6 +15,7 @@ call plug#begin('~/.vim/plugged')
 " Declare the list of plugins.
 Plug 'morhetz/gruvbox'
 Plug 'mtdl9/vim-log-highlighting'
+Plug 'itchyny/lightline.vim'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -35,6 +36,7 @@ set softtabstop=4   " number of spaces in TAB while editing
 set shiftwidth=4
 set expandtab
 
+set ruler
 set number relativenumber " show line numbers
 set cursorline  " highlight the current line
 
@@ -55,7 +57,7 @@ set wildmenu
 set wildmode=list:longest 
 
 set showmatch   " highlight paranthesis matching
-set undodir=~/.vim/undodir  " all the undo files are to be placed in this directory
+set undodir=~/.vim/undodir " All the undo files are placed in this directory
 set undofile    " undo previous actions even after you close and open a file    
 
 set incsearch   " search as characters are entered
