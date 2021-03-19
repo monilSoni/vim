@@ -7,6 +7,7 @@
 set exrc
 " Since Vim will source .vimrc from any directory you run Vim from, this is a potential security hole; so, you should consider setting secure option. This option will restrict usage of some commands in non-default .vimrc files; commands that write to file or execute shell commands are not allowed and map commands are displayed.
 set secure
+set noswapfile
 
 " vim-plug stuff
 " Plugins will be downloaded under the specified directory.
@@ -77,12 +78,6 @@ set splitbelow
 set splitright
 
 set laststatus=2 " Show the name of the file always
-
-" Disable arrow keys in every mode except insert
-noremap <Left>  :echoe "Use h"<CR>
-noremap <Right> :echoe "Use l"<CR>
-noremap <Up>    :echoe "Use k"<CR>
-noremap <Down>  :echoe "Use j"<CR>
 
 " Making navigation simpler
 nnoremap <c-j> <c-w>j
