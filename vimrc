@@ -1,8 +1,5 @@
 " This vimrc was created on 31st March, 2019 by Monil Soni
 " 
-" Paste the following line in ~/.vimrc and uncomment it
-" runtime vimrc " Load the first file named 'vimrc' found in runtimepath
-
 " This option forces Vim to source .vimrc file if it present in working directory, thus providing a place to store project-specific configuration.
 set exrc
 " Since Vim will source .vimrc from any directory you run Vim from, this is a potential security hole; so, you should consider setting secure option. This option will restrict usage of some commands in non-default .vimrc files; commands that write to file or execute shell commands are not allowed and map commands are displayed.
@@ -15,6 +12,8 @@ call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.
 Plug 'morhetz/gruvbox'
+Plug 'sheerun/vim-polyglot'
+Plug 'joshdick/onedark.vim'
 Plug 'mtdl9/vim-log-highlighting'
 Plug 'itchyny/lightline.vim'
 
@@ -29,8 +28,8 @@ set nocompatible
 
 syntax enable   " enable syntax processing
 " color dracula
-colorscheme gruvbox
-set background=dark
+colorscheme onedark
+" set background=dark " For gruvbox theme
 
 set tabstop=4   " number of visual spaces per TAB
 set softtabstop=4   " number of spaces in TAB while editing
@@ -85,16 +84,4 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-" Cursor remapping from block to ibeam in insert mode
-if has("autocmd")
-  au VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' | redraw!
-  au InsertEnter,InsertChange *
-    \ if v:insertmode == 'i' |
-    \   silent execute '!echo -ne "\e[5 q"' | redraw! |
-    \ elseif v:insertmode == 'r' |
-    \   silent execute '!echo -ne "\e[3 q"' | redraw! |
-    \ endif
-  au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
-endif
-
-autocmd BufNewFile *.cpp r ~/Competitive-Coding/templates/cpp_template.cpp
+" autocmd BufNewFile *.cpp r ~/Competitive-Coding/templates/cpp_template.cpp
