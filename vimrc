@@ -4,32 +4,19 @@
 set exrc
 " Since Vim will source .vimrc from any directory you run Vim from, this is a potential security hole; so, you should consider setting secure option. This option will restrict usage of some commands in non-default .vimrc files; commands that write to file or execute shell commands are not allowed and map commands are displayed.
 set secure
+
 set noswapfile
-
-" vim-plug stuff
-" Plugins will be downloaded under the specified directory.
-call plug#begin('~/.vim/plugged')
-
-" Declare the list of plugins.
-Plug 'morhetz/gruvbox'
-Plug 'sheerun/vim-polyglot'
-Plug 'joshdick/onedark.vim'
-Plug 'mtdl9/vim-log-highlighting'
-Plug 'itchyny/lightline.vim'
-
-" List ends here. Plugins become visible to Vim after this call.
-call plug#end()
+set undodir=~/.vim/undodir " All the undo files are placed in this directory
+set undofile    " undo previous actions even after you close and open a file    
 
 " Uncomment the following line if you use YouCompleteMe
 " let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/.ycm_extra_conf.py'
 
+syntax enable   " enable syntax processing
+set signcolumn=yes
+
 set encoding=utf-8
 set nocompatible
-
-syntax enable   " enable syntax processing
-" color dracula
-colorscheme onedark
-" set background=dark " For gruvbox theme
 
 set tabstop=4   " number of visual spaces per TAB
 set softtabstop=4   " number of spaces in TAB while editing
@@ -39,6 +26,7 @@ set expandtab
 set ruler
 set number relativenumber " show line numbers
 set cursorline  " highlight the current line
+set scrolloff=8 " always offset n number of lines from where you're editing
 
 set showmode    " see what mode you're in
 set showcmd    " see what commands you are typing
@@ -57,8 +45,6 @@ set wildmenu
 set wildmode=list:longest 
 
 set showmatch   " highlight paranthesis matching
-set undodir=~/.vim/undodir " All the undo files are placed in this directory
-set undofile    " undo previous actions even after you close and open a file    
 
 set incsearch   " search as characters are entered
 set hlsearch    " highlight matches
@@ -85,3 +71,28 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
 " autocmd BufNewFile *.cpp r ~/Competitive-Coding/templates/cpp_template.cpp
+
+" Plugins stuff
+
+" vim-plug stuff
+" Plugins will be downloaded under the specified directory.
+call plug#begin('~/.vim/plugged')
+
+" Declare the list of plugins.
+Plug 'morhetz/gruvbox'
+Plug 'sheerun/vim-polyglot'
+Plug 'joshdick/onedark.vim'
+Plug 'mtdl9/vim-log-highlighting'
+Plug 'itchyny/lightline.vim'
+Plug 'preservim/nerdtree'
+
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
+
+" Start NERDTree. If a file is specified, move the cursor to its window.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+
+" color dracula
+colorscheme onedark
+" set background=dark " For gruvbox theme
